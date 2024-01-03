@@ -9,7 +9,7 @@ type Props = {
   className?: string;
 };
 
-export const AnimatedText = ({ text, className }: Props) => {
+export const TypingText = ({ text, className }: Props) => {
   const count = useMotionValue(0);
   const roundedValue = useTransform(count, (latest) => Math.round(latest));
   const animatedText = useTransform(roundedValue, (latest) =>
