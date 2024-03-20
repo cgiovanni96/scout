@@ -27,22 +27,21 @@ export const Guilds = ({ colorEnabled }: Props) => {
             Premi sulle icone <br /> per scoprire di più!
           </span>
         </div>
-        <div className="flex flex-col gap-4 md:gap-0 md:flex-row md:justify-between my-8">
+        <div className="flex flex-col gap-8 lg:gap-4 md:gap-0 md:flex-row md:justify-between my-8">
           {guilds.map((guild) => (
-            <div
-              key={guild.label}
-              className="flex md:flex-col gap-4 items-center"
-            >
-              <div className="rounded-full p-8 bg-primary-900 border-primary-500 border-4 ">
-                <Image
-                  src={guild.image}
-                  alt={guild.label}
-                  width={100}
-                  height={100}
-                />
+            <div key={guild.label} className="flex flex-col gap-4 items-center">
+              <div className="rounded-full p-16 lg:p-8 bg-primary-900 border-primary-500 border-4 ">
+                <div className="relative inline-block w-[125px] h-[125px] lg:w-[100px] lg:h-[100px]">
+                  <Image
+                    src={guild.image}
+                    alt={guild.label}
+                    fill
+                    className="object-fit"
+                  />
+                </div>
               </div>
               <span
-                className="text-primary-900 font-bold text-2xl"
+                className="text-primary-900 font-bold text-4xl lg:text-2xl"
                 style={{ color: colorEnabled ? guild.color : "" }}
               >
                 {guild.label}
