@@ -7,6 +7,7 @@ import { MenuIcon } from "@/src/icon";
 import { Overlay } from "@/src/components/overlay";
 
 import { NavigationMenu } from "./navigation-menu.component";
+import { Agesci } from "@/src/ui/agesci";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -19,9 +20,7 @@ export const Header = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <header className="absolute flex justify-between items-center top-10 w-[90%] md:w-4/5 left-1/2 -translate-x-1/2 py-4 px-8 bg-white bg-opacity-80 rounded-lg shadow-md z-10">
-          <div>
-            <div className="inline-block rounded-full bg-blue-500 p-2" />
-          </div>
+          <div></div>
 
           <nav className="hidden md:flex gap-8">
             <NavigationMenu path={path} filter={true} />

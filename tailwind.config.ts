@@ -13,6 +13,7 @@ const config: Config = {
         "primary-500": "#22C4AF",
         "primary-700": "#137064",
         "primary-900": "#0A3932",
+        "primary-dark": "#051A17",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

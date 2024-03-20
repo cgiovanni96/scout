@@ -11,19 +11,20 @@ export const Tagline = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="text-white font-black text-4xl md:text-6xl"
+        className="text-white font-black text-4xl md:text-6xl text-center lg:text-left"
       >
         GRUPPO SCOUT <br /> AGESCI TIGULLIO
       </motion.h1>
       <TypingText
-        text="Il più antico gruppo scout del Tigullio"
-        className="text-white mt-4 drop-shadow-lg text-xl md:text-2xl"
+        text="Il più antico (e unico!) gruppo scout del Tigullio"
+        className="text-white mt-4 drop-shadow-lg text-xl md:text-2xl text-center lg:text-left"
       />
 
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
+        className="flex justify-center lg:justify-start"
       >
         <Link
           href="/iscrizioni"

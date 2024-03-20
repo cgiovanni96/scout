@@ -13,7 +13,7 @@ export const Guilds = ({ colorEnabled }: Props) => {
     <motion.section
       className="rounded-t-2xl bg-primary-700 py-8  min-h-60"
       initial={{ y: 100, opacity: 0.8 }}
-      whileInView={{ y: -20, opacity: 1 }}
+      whileInView={{ y: -25, opacity: 1 }}
       viewport={{ once: true }}
     >
       <div className="w-4/5 flex flex-col mx-auto">
@@ -41,7 +41,6 @@ export const Guilds = ({ colorEnabled }: Props) => {
                   height={100}
                 />
               </div>
-
               <span
                 className="text-primary-900 font-bold text-2xl"
                 style={{ color: colorEnabled ? guild.color : "" }}

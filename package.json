@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.1",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.4",
+    "@types/mdx": "^2.0.11",
     "clsx": "^2.1.0",
     "framer-motion": "^10.16.16",
     "next": "14.0.4",

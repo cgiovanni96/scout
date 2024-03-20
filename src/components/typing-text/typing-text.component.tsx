@@ -26,9 +26,11 @@ export const TypingText = ({ text, className }: Props) => {
   }, []);
 
   return (
-    <span className={className}>
-      <motion.span>{animatedText}</motion.span>
+    <div className={className}>
+      <motion.span className="text-center lg:text-left">
+        {animatedText}
+      </motion.span>
       <BlinkingCursor />
-    </span>
+    </div>
   );
 };
