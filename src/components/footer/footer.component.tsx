@@ -4,11 +4,16 @@ import { basicInfo, pages } from "@/src/data";
 import { Instagram } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export const Footer = () => {
+  const pathName = usePathname();
+
   return (
-    <footer className="w-full flex px-4 pb-8 text-white bg-primary-900">
-      <div className="w-3/4 mx-auto flex flex-col gap-4">
+    <footer
+      className={`w-full flex px-4 pb-8 text-white bg-primary-900 ${pathName !== "/" && "pt-8"}`}
+    >
+      <div className="w-4/5 lg:w-3/4 mx-auto flex flex-col gap-4">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <h1 className="text-4xl font-bold">
             GRUPPO SCOUT <br /> AGESCI TIGULLIO

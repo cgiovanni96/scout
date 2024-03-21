@@ -30,7 +30,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <PageHeader />
 
-          <main className="flex-1 flex flex-col gap-4 w-3/4 mx-auto mt-8">
+          <main className="flex-1 flex flex-col gap-4 w-4/5 lg:w-3/4 mx-auto mt-8 pb-8">
             {children}
           </main>
 

@@ -5,8 +5,6 @@ import { BackgroundImage } from "./background-image.component";
 import { Tagline } from "./tagline.component";
 import { motion } from "framer-motion";
 
-// TODO: agesci piu piccolo su mobile, centrato, animazione
-
 export const Hero = () => {
   return (
     <section className="w-full h-screen flex flex-col justify-center relative">

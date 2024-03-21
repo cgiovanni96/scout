@@ -13,9 +13,9 @@ export const PageHeader = () => {
   );
 
   return (
-    <div className="bg-primary-700 lg:pt-28">
-      <div className="w-3/4 mx-auto lg:min-h-[200px] flex items-center">
-        <h1 className="font-bold text-white lg:text-6xl">{title}</h1>
+    <div className="bg-primary-900  pt-20">
+      <div className="w-3/4 mx-auto min-h-[150px] lg:min-h-[200px] flex items-center">
+        <h1 className="font-bold  text-white text-5xl lg:text-6xl">{title}</h1>
       </div>
     </div>
   );
