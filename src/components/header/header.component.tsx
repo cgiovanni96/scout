@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   Variants,
@@ -30,6 +30,10 @@ export const Header = () => {
     "show",
   );
 
+  useEffect(() => {
+    open && setOpen(false);
+  }, [path]);
+
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (current) => {
@@ -40,8 +44,6 @@ export const Header = () => {
         : "show";
     setHeaderVariant(variant);
   });
-
-  console.log("headerVariant", headerVariant);
 
   return (
     <>
@@ -67,7 +69,6 @@ export const Header = () => {
         title="Navigazione"
         open={open}
         onClose={() => {
-          console.log("close");
           setOpen(false);
         }}
       >
