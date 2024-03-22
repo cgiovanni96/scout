@@ -21,7 +21,7 @@ export const Footer = () => {
 
           <div className="hidden lg:flex gap-6">
             {pages.map((page) => (
-              <Link key={page.path} href={page.path}>
+              <Link key={page.path} href={page.path} className="font-bold">
                 {page.name.toUpperCase()}
               </Link>
             ))}

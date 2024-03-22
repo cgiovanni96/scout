@@ -12,7 +12,6 @@ import { MenuIcon } from "@/src/icon";
 import { Overlay } from "@/src/components/overlay";
 
 import { NavigationMenu } from "./navigation-menu.component";
-import { Agesci } from "@/src/ui/agesci";
 
 const variants: Variants = {
   initial: { opacity: 0, top: -100 },
@@ -51,7 +50,7 @@ export const Header = () => {
         variants={variants}
         initial="initial"
         animate={headerVariant}
-        className="fixed flex backdrop-blur-sm justify-between items-center  left-1/2 -translate-x-1/2 w-[90%] md:w-4/5 py-4 px-8 bg-white bg-opacity-80 rounded-lg shadow-md z-10"
+        className="fixed flex backdrop-blur-sm justify-end items-center  left-1/2 -translate-x-1/2 w-[90%] md:w-4/5 py-4 px-8 bg-white bg-opacity-80 rounded-lg shadow-md z-10"
       >
         <nav className="hidden md:flex gap-8">
           <NavigationMenu path={path} filter={true} />
