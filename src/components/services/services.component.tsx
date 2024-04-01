@@ -1,12 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const TEXT = {
   title: "non sai dove fare bivacco?",
   text: [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in accumsan augue. Ut finibus cursus orci ut finibus. Aliquam erat volutpat. Donec nisi ipsum, sollicitudin ac venenatis sed, sagittis ac orci. Vestibulum vehicula congue ipsum, sed tincidunt augue interdum sed.",
-    "Cras at dolor in urna tristique vestibulum nec eget dui. Sed ac volutpat est, eu tempus tortor. Sed id elit scelerisque est semper facilisis nec in sem.",
+    "Presso la Parrocchia di Santo Stefano, situata a Lavagna, abbiamo la possibilta’ di ospitare gruppi Scout provenienti da tutta Italia.",
+    "Nel terreno di circa tot mq c'è la possibilità di montare le tende, accendere il fuoco (solo all’ interno del braciere e solo se non vi sono divieti in atto emanati dalla Protezione Civile), avere l’accesso all’acqua potabile.",
+    "Inoltre è disponibile l’utilizzo del salone e della cucina.",
   ],
 };
 
@@ -40,9 +42,9 @@ export const Services = () => {
             ))}
 
             <div>
-              <a href="/servizi" className="font-bold text-primary-500">
+              <Link href="/servizi" className="font-bold text-primary-500">
                 Clicca qui
-              </a>{" "}
+              </Link>{" "}
               per maggiori informazioni
             </div>
           </div>

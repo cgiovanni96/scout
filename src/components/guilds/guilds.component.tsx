@@ -3,12 +3,19 @@ import { motion } from "framer-motion";
 
 import { guilds } from "@/src/data";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type Props = {
   colorEnabled?: boolean;
 };
 
 export const Guilds = ({ colorEnabled }: Props) => {
+  const router = useRouter();
+
+  const guildOnClick = (linkId: string) => {
+    router.push(`/branche/${linkId}`);
+  };
+
   return (
     <motion.section
       className="rounded-t-2xl bg-primary-700 py-8  min-h-60"
@@ -29,7 +36,11 @@ export const Guilds = ({ colorEnabled }: Props) => {
         </div>
         <div className="flex flex-col gap-8 lg:gap-4 md:gap-0 md:flex-row md:justify-between my-8">
           {guilds.map((guild) => (
-            <div key={guild.label} className="flex flex-col gap-4 items-center">
+            <div
+              key={guild.label}
+              className="flex flex-col gap-4 items-center cursor-pointer"
+              onClick={() => guildOnClick(guild.linkId)}
+            >
               <div className="rounded-full p-16 lg:p-8 bg-primary-900 border-primary-500 border-4 ">
                 <div className="relative inline-block w-[125px] h-[125px] lg:w-[100px] lg:h-[100px]">
                   <Image

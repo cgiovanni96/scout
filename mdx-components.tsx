@@ -13,6 +13,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </h2>
     ),
+    ul: ({ children }) => (
+      <ul className="flex flex-col gap-2  list-inside list-disc">{children}</ul>
+    ),
     ...components,
   };
 }
