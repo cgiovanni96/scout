@@ -6,5 +6,5 @@ export const pages: Array<Page> = [
   { name: "Contatti", path: "/contatti" },
   { name: "Iscrizioni", path: "/iscrizioni" },
   { name: "Servizi", path: "/servizi", hideFromNav: true },
-  { name: "Branche", path: "/branche", hideFromNav: true },
+  { name: "Le tre branche", path: "/branche", hideFromNav: true },
 ];

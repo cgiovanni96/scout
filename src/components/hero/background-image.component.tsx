@@ -7,8 +7,7 @@ export const BackgroundImage = () => (
     <div className="relative h-full w-full">
       <BackgroundShadow />
       <Image
-        placeholder="blur"
-        src={heroImage}
+        src={"/prova_hero2.jpg"}
         alt="Hero image"
         fill={true}
         className="object-cover -z-[12]"

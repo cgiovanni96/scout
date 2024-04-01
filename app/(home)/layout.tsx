@@ -10,10 +10,9 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-// TODO: change metadata with correct info
 export const metadata: Metadata = {
-  title: "Scout",
-  description: "Sito scout",
+  title: "Gruppo Scout Agesci Tigullio",
+  description: "Sito del gruppo scout Agesci Tigullio",
 };
 
 export default function RootLayout({

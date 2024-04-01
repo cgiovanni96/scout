@@ -3,6 +3,9 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
+
 import {
   Form,
   FormControl,
@@ -16,8 +19,7 @@ import {
 import { Input } from "@/src/ui/input";
 import { Button } from "@/src/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/src/ui/radio-group";
-import { Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/src/ui/textarea";
 
 const defaultMessage = "Campo obbligatorio";
 const defaultPlaceHolder = "La tua risposta";
@@ -58,6 +60,8 @@ export const EnrollmentForm = () => {
 
   const onSubmit = async (data: Schema) => {
     await wait(2000);
+
+    // iscrizioni.agescitigullio@gmail.com
 
     toast("Mail inviata con successo", {
       description:
@@ -208,12 +212,11 @@ export const EnrollmentForm = () => {
 
         <FormField
           control={form.control}
-          name="additionalInfo"
+          name="groupKnowledge"
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                Ci sono esigenze particolari di cui il Gruppo deve essere
-                informato?
+                Come siete venuti a conoscenza del nostro gruppo?
               </FormLabel>
               <FormControl>
                 <Input placeholder={defaultPlaceHolder} {...field} />
@@ -225,14 +228,15 @@ export const EnrollmentForm = () => {
 
         <FormField
           control={form.control}
-          name="groupKnowledge"
+          name="additionalInfo"
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                Come siete venuti a conoscenza del nostro gruppo?
+                Ci sono esigenze particolari di cui il Gruppo deve essere
+                informato? (es. allergie, difficoltà, ecc.)
               </FormLabel>
               <FormControl>
-                <Input placeholder={defaultPlaceHolder} {...field} />
+                <Textarea placeholder={defaultPlaceHolder} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

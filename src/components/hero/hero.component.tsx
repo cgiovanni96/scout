@@ -17,9 +17,9 @@ export const Hero = () => {
           className="w-full flex justify-center lg:justify-start"
         >
           <Agesci
-            primary={"#FFF"}
-            secondary="#EB0000"
-            className="w-[200] h-[200px] lg:w-[240px] lg:h-[240px] "
+            primary={"#3F0683"}
+            secondary={"#F5C20C"}
+            className="w-[200] h-[200px]  "
           />
         </motion.div>
         <Tagline />
