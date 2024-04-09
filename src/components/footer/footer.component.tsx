@@ -1,7 +1,7 @@
 "use client";
 
 import { basicInfo, pages } from "@/src/data";
-import { Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -44,6 +44,14 @@ export const Footer = () => {
               target="_blank"
             >
               <Instagram />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://www.facebook.com/groups/40477455425/"
+              target="_blank"
+            >
+              <Facebook />
             </motion.a>
           </div>
         </div>

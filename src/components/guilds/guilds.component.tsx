@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { guilds } from "@/src/data";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   colorEnabled?: boolean;
@@ -65,7 +66,16 @@ export const Guilds = ({ colorEnabled }: Props) => {
               </div>
             ))}
         </div>
-      </div>{" "}
+      </div>
+      <div className="flex items-center justify-center">
+        <Link
+          href="/branche#scoiattolo"
+          className="font-bold text-white cursor-pointer text-sm"
+        >
+          Dove posso comprare l’uniforme e il materiale Scout necessario? Clicca
+          qui!
+        </Link>
+      </div>
     </motion.section>
   );
 };

@@ -131,8 +131,11 @@ const Page = () => {
             </div>
           </section>
         </div>
-        <p>
-          <a href="https://www.loscoiattolo.info/ ">
+        <p id="scoiattolo">
+          <a
+            href="https://www.loscoiattolo.info/"
+            className="font-bold text-primary-700 underline cursor-pointer"
+          >
             Visita il sito ufficiale "Lo Scoiattolo" per comprare uniforme,
             distintivi o qualsiasi cosa ti serva.
           </a>{" "}

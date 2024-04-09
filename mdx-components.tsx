@@ -1,7 +1,5 @@
 import type { MDXComponents } from "mdx/types";
 
-// TODO: style anchor element
-
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
@@ -23,6 +21,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     ul: ({ children }) => (
       <ul className="flex flex-col gap-2  list-inside list-disc">{children}</ul>
+    ),
+    a: ({ children, ...props }) => (
+      <a
+        className="text-primary-700 font-bold underline cursor-pointer"
+        {...props}
+      >
+        {children}
+      </a>
     ),
     ...components,
   };
