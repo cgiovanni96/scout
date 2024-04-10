@@ -37,8 +37,11 @@ export const Services = () => {
           </div>
 
           <div className="flex-1 space-y-2">
-            {TEXT.text.map((text) => (
-              <p className="text-center lg:w-3/4 lg:text-justify lg:text-lg">
+            {TEXT.text.map((text, idx) => (
+              <p
+                key={idx}
+                className="text-center lg:w-3/4 lg:text-justify lg:text-lg"
+              >
                 {text}
               </p>
             ))}

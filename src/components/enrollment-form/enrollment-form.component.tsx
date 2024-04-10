@@ -20,6 +20,7 @@ import { Input } from "@/src/ui/input";
 import { Button } from "@/src/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/src/ui/radio-group";
 import { Textarea } from "@/src/ui/textarea";
+import { sendEmail } from "@/src/actions";
 
 const defaultMessage = "Campo obbligatorio";
 const defaultPlaceHolder = "La tua risposta";
@@ -27,20 +28,17 @@ const defaultPlaceHolder = "La tua risposta";
 const schema = z.object({
   name: z.string().min(1, defaultMessage),
   birthDate: z.string().min(1, defaultMessage),
+  emailAddress: z.string().email("Inserisci un indirizzo email valido"),
   parentName: z.string().min(1, defaultMessage),
   residence: z.string().min(1, defaultMessage),
-  hasSiblings: z.boolean(),
+  hasSiblings: z.string(),
   siblings: z.string().optional(),
   phone: z.string().min(1, defaultMessage),
   additionalInfo: z.string().min(1, defaultMessage),
   groupKnowledge: z.string().min(1, defaultMessage),
 });
 
-type Schema = z.infer<typeof schema>;
-
-const wait = async (milliseconds: number) => {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
-};
+export type Schema = z.infer<typeof schema>;
 
 export const EnrollmentForm = () => {
   const form = useForm<Schema>({
@@ -50,7 +48,8 @@ export const EnrollmentForm = () => {
       birthDate: "",
       parentName: "",
       residence: "",
-      hasSiblings: false,
+      emailAddress: "",
+      hasSiblings: "No",
       siblings: "",
       phone: "",
       additionalInfo: "",
@@ -59,14 +58,17 @@ export const EnrollmentForm = () => {
   });
 
   const onSubmit = async (data: Schema) => {
-    await wait(2000);
-
-    // iscrizioni.agescitigullio@gmail.com
-
-    toast("Mail inviata con successo", {
-      description:
-        "Grazie per aver compilato il form, ti risponderemo al più presto",
-    });
+    const response = await sendEmail(data);
+    if (response.state === "success") {
+      toast("Mail inviata con successo", {
+        description:
+          "Grazie per aver compilato il form, ti risponderemo al più presto",
+      });
+    } else {
+      toast("Qualcosa è andato storto, riprova più tardi", {
+        className: "bg-red-500",
+      });
+    }
   };
 
   return (
@@ -117,6 +119,26 @@ export const EnrollmentForm = () => {
 
         <FormField
           control={form.control}
+          name="emailAddress"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Indirizzo email</FormLabel>
+              <FormControl>
+                <Input
+                  type="email"
+                  placeholder={defaultPlaceHolder}
+                  {...field}
+                />
+              </FormControl>
+
+              <FormDescription>Necessario per contattarvi.</FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
           name="parentName"
           render={({ field }) => (
             <FormItem>
@@ -152,21 +174,19 @@ export const EnrollmentForm = () => {
               <FormControl className="rounded-md border border-input p-2">
                 <RadioGroup
                   onValueChange={field.onChange}
-                  defaultValue={
-                    field.value ? "siblings-true" : "siblings-false"
-                  }
+                  defaultValue={field.value}
                   className="flex flex-col space-y-1"
                 >
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="sibilings-true" />
+                      <RadioGroupItem value="Si" />
                     </FormControl>
                     <FormLabel className="font-normal">Si</FormLabel>
                   </FormItem>
 
                   <FormItem className="flex items-center space-x-3 space-y-0">
                     <FormControl>
-                      <RadioGroupItem value="siblings-false" />
+                      <RadioGroupItem value="No" />
                     </FormControl>
                     <FormLabel className="font-normal">No</FormLabel>
                   </FormItem>
@@ -202,9 +222,6 @@ export const EnrollmentForm = () => {
               <FormControl>
                 <Input placeholder={defaultPlaceHolder} {...field} />
               </FormControl>
-              <FormDescription>
-                Necessario per contattarvi in caso di entrata nel Gruppo
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

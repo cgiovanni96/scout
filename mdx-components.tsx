@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import { ImageGrid } from "@/src/components/image-grid";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -30,6 +31,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
+
+    ImageGrid,
     ...components,
   };
 }
