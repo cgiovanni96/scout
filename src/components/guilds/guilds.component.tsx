@@ -67,7 +67,7 @@ export const Guilds = ({ colorEnabled }: Props) => {
             ))}
         </div>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="mx-6 text-center flex items-center justify-center">
         <Link
           href="/branche#scoiattolo"
           className="font-bold text-white cursor-pointer text-sm"

@@ -21,6 +21,7 @@ import { Button } from "@/src/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/src/ui/radio-group";
 import { Textarea } from "@/src/ui/textarea";
 import { sendEmail } from "@/src/actions";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const defaultMessage = "Campo obbligatorio";
 const defaultPlaceHolder = "La tua risposta";
@@ -36,6 +37,11 @@ const schema = z.object({
   phone: z.string().min(1, defaultMessage),
   additionalInfo: z.string().min(1, defaultMessage),
   groupKnowledge: z.string().min(1, defaultMessage),
+
+  privacy: z
+    .boolean()
+    .default(false)
+    .refine((value) => value === true),
 });
 
 export type Schema = z.infer<typeof schema>;
@@ -54,6 +60,7 @@ export const EnrollmentForm = () => {
       phone: "",
       additionalInfo: "",
       groupKnowledge: "",
+      privacy: false,
     },
   });
 
@@ -90,7 +97,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="birthDate"
@@ -116,7 +122,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="emailAddress"
@@ -136,7 +141,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="parentName"
@@ -150,7 +154,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="residence"
@@ -164,7 +167,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="hasSiblings"
@@ -196,7 +198,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="siblings"
@@ -212,7 +213,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="phone"
@@ -226,7 +226,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="groupKnowledge"
@@ -242,7 +241,6 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="additionalInfo"
@@ -259,7 +257,29 @@ export const EnrollmentForm = () => {
             </FormItem>
           )}
         />
-
+        <FormField
+          control={form.control}
+          name="privacy"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>ACCONSENTO</FormLabel>
+                <FormDescription>
+                  ai sensi e per gli effetti degli artt. 13 e 23 del D. L.gs. n.
+                  196/2003, con la sottoscrizione del presente modulo, al
+                  trattamento dei dati personali secondo le modalità e nei
+                  limiti previsti dalla legge
+                </FormDescription>
+              </div>
+            </FormItem>
+          )}
+        />
         <Button type="submit">
           {form.formState.isSubmitting && (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
