@@ -27,7 +27,12 @@ export const sendEmail = async (
   data: Schema,
 ): Promise<{ state: "success" | "error" }> => {
   try {
-    const emailTemplate = render(<EnrollmentTemplate data={data} />);
+    const { birthDate, ...rest } = data;
+    const date = new Date(birthDate).toLocaleDateString("it-IT");
+
+    const emailTemplate = render(
+      <EnrollmentTemplate data={{ ...rest, birthDate: date }} />,
+    );
 
     await transporter.sendMail({
       from: "iscrizioni@agescigruppotigullio.it",

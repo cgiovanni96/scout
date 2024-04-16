@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TEXT = {
-  title: "non sai dove fare bivacco?",
+  title: "Non sai dove fare uscita con il Branco?",
   text: [
-    "Presso la Parrocchia di Santo Stefano, situata a Lavagna, abbiamo la possibilta’ di ospitare gruppi Scout provenienti da tutta Italia.",
-    "Nel terreno adiacente c'è la possibilità di montare le tende, accendere il fuoco (solo all’ interno del braciere e solo se non vi sono divieti in atto emanati dalla Protezione Civile), avere l’accesso all’acqua potabile.",
-    "Inoltre è disponibile l’utilizzo del salone e della cucina.",
+    "Vorresti un posto dove poter cucinare e dormire in tenda di Squadriglia o ancora meglio di Reparto?",
+    "Vieni da fuori regione e vorresti fare “un campo vicino al mare”?",
+    "Allora abbiamo la soluzione per te!",
   ],
 };
 
@@ -36,17 +36,17 @@ export const Services = () => {
             />
           </div>
 
-          <div className="flex-1 space-y-2">
+          <div className="flex-1">
             {TEXT.text.map((text, idx) => (
               <p
                 key={idx}
-                className="text-center lg:w-3/4 lg:text-justify lg:text-lg"
+                className="mb-2 text-center lg:w-3/4 lg:text-justify lg:text-lg"
               >
                 {text}
               </p>
             ))}
 
-            <div>
+            <div className="mt-8">
               <Link href="/servizi" className="font-bold text-primary-500">
                 Clicca qui
               </Link>{" "}

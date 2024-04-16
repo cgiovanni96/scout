@@ -159,7 +159,7 @@ export const EnrollmentForm = () => {
           name="residence"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Luogo di residenza</FormLabel>
+              <FormLabel>Luogo e via di residenza</FormLabel>
               <FormControl>
                 <Input placeholder={defaultPlaceHolder} {...field} />
               </FormControl>
