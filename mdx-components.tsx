@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import { ImageGrid } from "@/src/components/image-grid";
-import { Location } from "@/src/components/location";
+import { Location, LavagnaLocation } from "@/src/components/location";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -35,6 +35,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     ImageGrid,
     Location,
+    LavagnaLocation,
     ...components,
   };
 }
