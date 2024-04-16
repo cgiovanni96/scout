@@ -13,11 +13,11 @@ export const EnrollmentTemplate = ({ data }: Props) => {
       <Text>Nome e Cognome di vostro/a FIGLIO/A: {data.name}</Text>
       <Text>Data di nascita: {data.birthDate}</Text>
       <Text>Nome e Cognome di un genitore/tutore: {data.parentName}</Text>
-      <Text>Luogo di residenza: {data.residence}</Text>
+      <Text>Luogo e via di residenza: {data.residence}</Text>
       <Text>Ha fratelli/sorelle in Gruppo?: {data.hasSiblings}</Text>
       <Text>
-        Indicare nome e branca dei fratelli/sorelle presenti in gruppo:{" "}
-        {data.siblings}
+        Indicare nome, anno di nascita e branca dei fratelli/sorelle presenti in
+        gruppo: {data.siblings}
       </Text>
       <Text>Numero di telefono : {data.phone}</Text>
       <Text>Indirizzo email: {data.emailAddress}</Text>

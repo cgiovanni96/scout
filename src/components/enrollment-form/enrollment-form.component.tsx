@@ -204,7 +204,8 @@ export const EnrollmentForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                Indicare nome e branca dei fratelli/sorelle presenti in gruppo
+                Indicare nome, anno di nascita e branca dei fratelli/sorelle
+                presenti in gruppo
               </FormLabel>
               <FormControl>
                 <Input placeholder={defaultPlaceHolder} {...field} />
