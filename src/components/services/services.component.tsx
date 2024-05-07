@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TEXT = {
-  title: "Non sai dove fare uscita con il Branco?",
+  title: "IL “NOSTRO” TERRENO A TUA DISPOSIZIONE",
   text: [
+    "Non sai dove fare uscita con il Branco?",
     "Vorresti un posto dove poter cucinare e dormire in tenda di Squadriglia o ancora meglio di Reparto?",
     "Vieni da fuori regione e vorresti fare “un campo vicino al mare”?",
     "Allora abbiamo la soluzione per te!",
